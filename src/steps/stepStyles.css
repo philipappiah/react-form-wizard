@@ -96,7 +96,7 @@ button{
 
 @media (min-width: 500px) {
 	.stepcard{
-        left: 25%;
+        
         width: 50%;
         margin-top: 15px;
         margin-bottom: 20px;
@@ -112,7 +112,7 @@ button{
         -webkit-animation: fadeinout 1s ease-in-out forwards;
         animation: fadeinout 1s ease-in-out forwards;
         opacity: 0;
-        margin-left: 25%;
+       
         width: 50%;
         margin-top: 15px;
         margin-bottom: 20px;
