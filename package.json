@@ -1,6 +1,6 @@
 {
   "name": "react-form-wizard",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "React form wizard with minimal configuration. It uses bootstrap css",
   "main": "build/index.js",
   "author": {
