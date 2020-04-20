@@ -102,6 +102,7 @@ class StepCard extends React.Component {
                             className="custom-control-input"
                             type="radio"
                             name="gender"
+                            style={{height:"10%"}}
                             
                             defaultValue={`${name.id ? name.id : ""}`}
                             name={name.id ? name.id : ""}
@@ -139,6 +140,7 @@ class StepCard extends React.Component {
                       <div className="col form-group">
                         <label>{name.label ? name.label : ""}</label>
                         <input
+                        style={{height:"10%"}}
                           type={`${data}`}
                           className="form-control"
                           placeholder={`${
