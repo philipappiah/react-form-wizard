@@ -9,10 +9,12 @@ In the project directory, you can run:
 
 Usage in component.<br />
 
+
+```
 import FormWizard from "react-form-wizard" <br />
 
+
 state = {
-    loaded: false,
     totalSteps: 4,
     steps: {
       1: "Add Profile Information",
@@ -23,7 +25,6 @@ state = {
         input: {
           text: {
             total: 2,
-
             names: [
               { id: "fullname", label: "Fullname", required: true },
               { id: "lastname", label: "Lastname" },
@@ -64,7 +65,7 @@ state = {
       </div>
       )
   }
-
+```
 
 
 
