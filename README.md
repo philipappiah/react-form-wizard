@@ -1,5 +1,5 @@
 
-react-form-wizard comes bundle with bootstrap 
+react-form-wizard comes bundled with bootstrap 
 
 
 ### `example forms`
