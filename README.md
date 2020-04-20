@@ -75,7 +75,7 @@ state = {
 
 
 ###  `The component requires the following props` <br />
- - steps = {title of each step}
+ - steps = {each step with title or description }
  - stepsData = {data to be shown on form e.g inputs, their names and types} 
  - totalSteps = {total number of steps} 
  
