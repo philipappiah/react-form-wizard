@@ -14,10 +14,15 @@
     "url": "https://github.com/philipappiah/react-form-wizard.git"
   },
   "keywords": [
-    "wizard",
+    "react",
     "form",
+    "wizard",
+    "formik",
+    "formwizard",
     "stepper",
+    "formstepper",
     "steps"
+    
   ],
  
   "license": "ISC",
