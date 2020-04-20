@@ -3,7 +3,7 @@ react-form-wizard comes bundle with bootstrap
 
 
 ### `example forms`
-[alt text](https://github.com/philipappiah/react-form-wizard.git/public/img/image_1.png)
+![alt text](https://github.com/philipappiah/react-form-wizard/blob/master/public/img/screenshot.PNG)
 
 ## Available Scripts
 
