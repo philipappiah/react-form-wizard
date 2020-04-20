@@ -1,6 +1,6 @@
 {
   "name": "react-form-wizard",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "React form wizard with minimal configuration. It uses bootstrap css",
   "main": "build/index.js",
   "author": {
@@ -14,10 +14,10 @@
     "url": "https://github.com/philipappiah/react-form-wizard.git"
   },
   "keywords": [
-    "react-form-wizard",
-    "form-steps",
-    "react-form-steps",
-    "forms"
+    "wizard",
+    "form",
+    "stepper",
+    "steps"
   ],
  
   "license": "ISC",
