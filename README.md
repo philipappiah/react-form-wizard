@@ -11,7 +11,7 @@ Usage in component.<br />
 
 
 ```
-import FormWizard from "react-form-wizard" <br />
+import FormWizard from "react-form-wizard" 
 
 
 state = {
