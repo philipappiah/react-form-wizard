@@ -1,5 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 react-form-wizard comes bundle with bootstrap 
+
+
+### `example forms`
+[alt text](https://github.com/philipappiah/react-form-wizard/master/public/img/image_1.png)
 
 ## Available Scripts
 
@@ -70,24 +74,24 @@ state = {
 
 
 
-The component requires the following props; <br />
- steps = {number of steps}<br />
- stepsData = {data to be shown on form e.g inputs, their names and types} <br />
- totalSteps = {number of steps} <br />
+###  `The component requires the following props` <br />
+ - steps = {number of steps}
+ - stepsData = {data to be shown on form e.g inputs, their names and types} 
+ - totalSteps = {number of steps} 
  
 
 
 
-The component also return the following as props; <br />
- data = {returns current form values}<br />
- submit = {returns final form values} <br />
+### `The component also return the following as props` <br />
+ - data = {returns current form values}
+ - submit = {returns final form values} 
 
  
 
 
 
 
-This component will continue to be maintained and it is expected to include more features.<br />
+This project will continue to be maintained and it is expected to include more features.<br />
 
 
 ### `This component is a react component`
