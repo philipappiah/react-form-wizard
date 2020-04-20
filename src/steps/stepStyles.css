@@ -1,0 +1,159 @@
+
+.center-card{
+   
+    
+    text-align: center;
+    margin-top: 25px;
+    
+}
+
+.nextStep .stepValue{
+   
+    color: white;
+    width: 2%;
+    border: 1px solid;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+   
+
+}
+
+button{
+  width: 120px!important;
+}
+
+.stepValue{
+    display: inline-block;
+ 
+}
+
+.nextLine{
+    display: inline-block;
+    width: 60px;
+    font-weight: bolder;
+
+}
+
+
+
+@media (max-width: 1000px) {
+
+  label{
+    float: left;
+  }
+    .hide {
+       
+      text-align: center;
+        
+        -webkit-animation: fadeinout 1s ease-in-out forwards;
+        animation: fadeinout 1s ease-in-out forwards;
+        opacity: 0;
+      
+    }
+
+    @keyframes fadeinout {
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+         
+        }
+      }
+
+      .nextStep .stepValue{
+   
+        color: white;
+        width: 7%;
+        border: 1px solid;
+        border-radius: 50%;
+        cursor: pointer;
+        text-align: center;
+       
+    
+    }
+	
+	
+	
+}
+
+.btn-block + .btn-block {
+  margin-top: 0rem !important;
+}
+
+.nextbtn{
+    float: right;
+    width: 100px;
+    
+}
+
+.prevbtn{
+    float: left;
+    width: 100px;
+}
+
+
+@media (min-width: 500px) {
+	.stepcard{
+        left: 25%;
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 20px;
+     
+      
+
+
+    }
+
+    .hide {
+       
+        
+        -webkit-animation: fadeinout 1s ease-in-out forwards;
+        animation: fadeinout 1s ease-in-out forwards;
+        opacity: 0;
+        margin-left: 25%;
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        
+      
+    }
+
+    @keyframes fadeinout {
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+         
+        }
+      }
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
