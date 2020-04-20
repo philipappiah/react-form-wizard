@@ -19,7 +19,7 @@ import FormWizard from "react-form-wizard"
 
 
 state = {
-    totalSteps: 4,
+    totalSteps: 2,
     steps: {
       1: "Add Profile Information",
       2: "Add Contact Details",
