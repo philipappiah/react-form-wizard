@@ -2,8 +2,8 @@
 .center-card{
    
     
-    text-align: center;
-    margin-top: 25px;
+    
+    margin: 25px;
     
 }
 
@@ -12,6 +12,7 @@
     color: white;
     width: 2%;
     border: 1px solid;
+    
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -25,6 +26,7 @@ button{
 
 .stepValue{
     display: inline-block;
+    
  
 }
 
@@ -66,6 +68,7 @@ button{
    
         color: white;
         width: 7%;
+      
         border: 1px solid;
         border-radius: 50%;
         cursor: pointer;
@@ -112,9 +115,10 @@ button{
         -webkit-animation: fadeinout 1s ease-in-out forwards;
         animation: fadeinout 1s ease-in-out forwards;
         opacity: 0;
-       
+        
         width: 50%;
         margin-top: 15px;
+     
         margin-bottom: 20px;
         
       

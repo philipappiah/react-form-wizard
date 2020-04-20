@@ -151,7 +151,7 @@ class StepForm extends React.Component {
   render() {
     return (
         
-      <div>
+      <div >
           {
             this.props.steps && this.props.stepsData && this.props.totalSteps ?
             <div>

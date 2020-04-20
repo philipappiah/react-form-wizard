@@ -65,7 +65,8 @@ class StepCard extends React.Component {
       <div
         className={`${this.props.setDisplay ? "hide" : "stepcard"}`}
         style={{
-          display: `${this.props.setDisplay ? "block" : "none"}`
+          display: `${this.props.setDisplay ? "block" : "none"}`,
+          
         }}
         key={this.props.identity}
       >
