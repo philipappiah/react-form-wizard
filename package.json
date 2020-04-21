@@ -3,15 +3,14 @@
   "version": "1.1.5",
   "description": "React form wizard with minimal configuration. It uses bootstrap css",
   "main": "build/index.js",
-  "author": {
-    "name": "Philip Appiah Kubi",
-    "email": "pappiahkubi1@gmail.com"
-  },
+  "preferGlobal": true,
+  "author": "Philip Appiah kubi <pappiahkubi1@mgail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/philipappiah/react-form-wizard.git"
   },
   "keywords": [
+    "react-form-wizard",
     "react",
     "form",
     "wizard",
