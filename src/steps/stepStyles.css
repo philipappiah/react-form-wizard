@@ -81,8 +81,15 @@ button{
 	
 }
 
+
+.btn{
+  cursor: pointer;
+}
+
+
 .btn-block + .btn-block {
   margin-top: 0rem !important;
+
 }
 
 .nextbtn{

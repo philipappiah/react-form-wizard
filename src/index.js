@@ -3,87 +3,63 @@ import StepCard from "./steps/stepCard";
 import bootstrap from "./steps/bootstrap.css"
 import stepStyles from "./steps/stepStyles.css";
 
+var _visited_arr = []
 
 class FormWizard extends React.Component {
+  state = {
+   
 
-    constructor(props){
-        super(props);
-        
-        
-    }
+    currentStep: 1
+  };
 
-
-    state = {
-        totalSteps: 4,
-        steps: {
-          1: "Add Seller Information",
-          2: "Add Business Information",
-          3: "How do we pay you?",
-          4: "Summary"
-        },
-        stepsData: {
-          1: {
-            input: {
-              text: {
-                total: 2,
-                names: ["fullname", "lastname"],
-                required: true
-              },
-              email: {
-                total: 1,
-                names: ["email"],
-                required: true
-              },
-              password: {
-                total: 1,
-                names: ["password"],
-                required: true
-              },
-              radio: {
-                total: 2,
-                names: ["male", "female"]
-              }
-            }
-          },
-          2: {
-            input: {
-              text: {
-                total: 2,
-                names: ["country", "region"]
-              },
-              email: {
-                total: 1,
-                names: ["contact"]
-              }
-            }
-          }
-        },
-        colorArray: [],
-        isactive: false,
-        currentStep: 1
-      };
- 
- 
+  componentDidMount = () => 
+  {
+    _visited_arr[0] = true;
+   for(let i = 1; i < this.props.totalSteps; i++){
+    _visited_arr[i] = false;
+   }
+  };
 
   setCurrentStep = (value, i) => {
-    this.setState({ currentStep: value });
+    this.setState({ currentStep: i + 1 });
     this.setColor(i);
   };
 
   setColor = index => {
-    document.getElementsByClassName("stepValue")[index].style.backgroundColor =
+
+   
+    
+    if(_visited_arr[index]){
+
+      for(let i = index+1; i < this.props.totalSteps ; i++){
+        if(_visited_arr[i]){
+          document.getElementsByClassName("stepValue")[i].style.backgroundColor =
+        "gray";
+        _visited_arr[i] = false
+  
+        }
+      }
+
+    }else{
+
+    _visited_arr[index] = true;
+   
+
+    
+
+    for(let i = 0; i < this.props.totalSteps ; i++){
+      if(_visited_arr[i]){
+        document.getElementsByClassName("stepValue")[i].style.backgroundColor =
       "blue";
 
-
-     
-    for (
-      let x = index + 1;
-      x < document.getElementsByClassName("stepValue").length;
-      x++
-    ) {
-      document.getElementsByClassName("stepValue")[x].style.backgroundColor =
+      }else{
+        document.getElementsByClassName("stepValue")[i].style.backgroundColor =
         "gray";
+      }
     }
+  }
+  
+
   };
 
 
@@ -93,9 +69,22 @@ class FormWizard extends React.Component {
     
     var len = document.getElementsByTagName("input").length;
     var selectlen = document.getElementsByTagName("select").length;
+    var txtarealen = document.getElementsByTagName("textarea").length;
+
 
     for (let i = 0; i < len; i++) {
-        if(document.getElementsByTagName("input")[i].files){
+      if(document.getElementsByTagName("input")[i].type == "checkbox"){
+       
+         
+          dataObj[
+          
+            document.getElementsByTagName("input")[i].name
+          ] = document.getElementsByTagName("input")[i].checked
+
+        
+        
+
+      }else if(document.getElementsByTagName("input")[i].files){
          
             dataObj[
           
@@ -109,6 +98,20 @@ class FormWizard extends React.Component {
 
         }
      
+    }
+
+    let txtareaNames = [];
+    for(let x = 0; x < txtarealen; x++){
+      txtareaNames.push(document.getElementsByTagName("textarea")[x].name);
+    }
+
+    if(txtarealen > 0){
+      for (let i = 0; i < txtarealen; i++) {
+        dataObj[txtareaNames[i]] = document.getElementsByTagName("textarea")[
+          i
+        ].value;
+      }
+
     }
 
     let selectNames = [];
@@ -183,11 +186,11 @@ class FormWizard extends React.Component {
 
         {Object.keys(this.props.steps).map((res, i) =>
           res == this.state.currentStep ? (
-            <div key={i}>
+            <div key={res}>
               <StepCard
                 title={this.props.steps[res]}
                 stepsData={this.props.stepsData}
-                key={i}
+                key={res}
                 totalSteps={this.props.totalSteps}
                 index={i}
                 move={this.setCurrentStep.bind(this)}
@@ -199,11 +202,11 @@ class FormWizard extends React.Component {
               />
             </div>
           ) : (
-            <div key={i}>
+            <div key={res}>
               <StepCard
                 title={this.props.steps[res]}
                 stepsData={this.props.stepsData}
-                key={i}
+                key={res}
                 index={i}
                 totalSteps={this.props.totalSteps}
                 values={this.values.bind(this)}
@@ -215,7 +218,7 @@ class FormWizard extends React.Component {
             </div>
           )
         )}
-        </div>:<div className="center-card" style={{marginTop:"20%"}}>No Steps or total steps provided to component</div>
+        </div>:<div className="center-card" style={{marginTop:"20%"}}>No Steps provided</div>
   }
       </div>
     );

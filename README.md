@@ -28,28 +28,61 @@ state = {
       1: {
         input: {
           text: {
-            total: 2,
-            names: [
+          
+            details: [
               { id: "fullname", label: "Fullname", required: true },
               { id: "lastname", label: "Lastname" },
             ],
             required: true,
+          },
+           email: {
+            total: 1,
+            details: [{ id: "contact", label: "Contact" }],
+          },
+
+           select: {
+           
+            details: [
+              {
+                id: "vat_status",
+                label: "VAT Registered",
+                options: ["Yes", "No"],
+                placeholder:"Select VAT status"
+              },
+            ],
+          },
+           textarea: {
+            details: [
+              {
+                id: "termsAndAgreement",
+                label: "Terms and Agreement",
+                rows: "5",
+                cols: "30",
+                defaultValue: "This is our terms and agreement",
+                readOnly:true
+              },
+            ],
+          },
+          checkbox: {
+            details: [
+              {
+                id: "acceptterms",
+                label: "I have read and accepted the agreement",
+              },
+            ],
           },
         },
       },
       2: {
         input: {
           text: {
-            total: 2,
-            names: [
+           
+            details: [
               { id: "country", label: "Country" },
               { id: "region", label: "Region" },
             ],
           },
-          email: {
-            total: 1,
-            names: [{ id: "contact", label: "Contact" }],
-          },
+         
         },
       },
     },

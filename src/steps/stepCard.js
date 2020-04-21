@@ -60,13 +60,32 @@ class StepCard extends React.Component {
       
 }
 
+submitData = (e) =>{
+  e.preventDefault();
+
+  this.getToNext()
+
+}
+
+showSubmitBtn = () =>{
+  let truthArr = this.props.showSubmit;
+  let i = 0;
+  truthArr.forEach(val=>{
+    if(val) i++;
+  })
+
+  if(i === this.props.totalSteps){
+    return true;
+  }
+  return false;
+}
+
   render() {
     return (
       <div
         className={`${this.props.setDisplay ? "hide" : "stepcard"}`}
         style={{
-          display: `${this.props.setDisplay ? "block" : "none"}`,
-          
+          display: `${this.props.setDisplay ? "block" : "none"}`
         }}
         key={this.props.identity}
       >
@@ -74,10 +93,12 @@ class StepCard extends React.Component {
           <div className="card-body" key={this.props.identity}>
             <h5>{this.props.title}</h5>
 
+            <form  onSubmit={this.submitData}>
+
             {Object.keys(this.props.stepsData).map(res =>
               res == this.props.identity ? (
                 Object.keys(this.props.stepsData[res].input).map(data =>
-                  this.props.stepsData[res].input[data].names.map((name, i) =>
+                  this.props.stepsData[res].input[data].details.map((name, i) =>
                     data === "radio" ? (
                         
                       <div
@@ -90,8 +111,7 @@ class StepCard extends React.Component {
                             htmlFor={`${name.id}`}
                             className="text-black"
                           >
-                            {name.placeholder ? name.placeholder  : ""} &nbsp;
-                            
+                            {name.placeholder ? name.placeholder : ""}
                           </label>
                         ) : (
                           <label />
@@ -102,7 +122,8 @@ class StepCard extends React.Component {
                             className="custom-control-input"
                             type="radio"
                             name="gender"
-                            style={{height:"10%"}}
+                            required={`${name.required ? 'required':''}`}
+                            
                             
                             defaultValue={`${name.id ? name.id : ""}`}
                             name={name.id ? name.id : ""}
@@ -117,32 +138,72 @@ class StepCard extends React.Component {
                       <div className="form-group">
                         <label htmlFor="c_diff_country" className="text-black">
                           {name.label ? name.label : ""}
-                    
+                          
                         </label>
                         <select
+                         style={{height:"10%"}}
                           name={`${name.id}`}
                           onChange={this.getFormValues}
                           className="form-control"
+                          required={`${name.required ? 'required':''}`}
                         >
                           {name.placeholder ? (
                             <option val={name.placeholder}>
                               {name.placeholder}
                             </option>
                           ) : (
-                            <div />
+                            <option></option>
                           )}
-                          {name.options.map(res => (
-                            <option value={res}>{res}</option>
+                          {name.options.map((res,i) => (
+                            <option key={i} value={res}>{res}</option>
                           ))}
                         </select>
                       </div>
-                    ) : (
+                    ) : data == "textarea" ?  (
+                      <div className="form-group">
+                      <label htmlFor={`${name.id}`} className="text-black">
+                        {name.label ? name.label : ""}
+                      </label>
+                      <textarea
+                        name={`${name.id ? name.id :""}`}
+                        id={`${name.id ? name.id:""}`}
+                        required={`${name.required ? 'required':''}`}
+                        readOnly={`${name.readOnly ? true:""}`}
+                        cols={name.cols ? name.cols: 10}
+                        rows={name.rows ? name.rows : 5}
+                        className="form-control"
+                      
+                        onChange={this.getFormValues}
+                        placeholder={`${name.placeholder ? name.placeholder :""}`}
+                        defaultValue={`${name.defaultValue ? name.defaultValue:""}`}
+                      />
+                    </div>
+                    ) : data == "checkbox" ?
+                    ( 
+                      <div className="form-group">
+                    <label
+                      htmlFor={`${name.id ? name.id:""}`}
+                      className="text-black"
+                      
+                    >
+                      <input
+                        type="checkbox"
+                        defaultValue={`${name.defaultValue ? name.defaultValue:""}`}
+                        required={`${name.required ? 'required':''}`}
+                        name={`${name.id ? name.id :""}`}
+                        id={`${name.id ? name.id:""}`}
+                        onChange={this.getFormValues}
+                      />{" "}
+                      {name.label}
+                    </label>  </div>): (
                       <div className="col form-group">
                         <label>{name.label ? name.label : ""}</label>
                         <input
-                        style={{height:"10%"}}
                           type={`${data}`}
                           className="form-control"
+                          style={{height:"10%"}}
+                          required={`${name.required ? 'required':''}`}
+                          readOnly={`${name.readOnly ? true:""}`}
                           placeholder={`${
                             name.placeholder ? name.placeholder : ""
                           }`}
@@ -168,7 +229,7 @@ class StepCard extends React.Component {
               style={{background:"blue", color:"white"}}
               className="btn  btn-block prevbtn"
             >
-              Previous
+              Prev
             </button>
 
             {
@@ -187,8 +248,8 @@ class StepCard extends React.Component {
                <button
             
             
-               type="button"
-               onClick={this.getToNext}
+               type="submit"
+              
                style={{background:"blue", color:"white"}}
                className="btn  btn-block nextbtn"
              >
@@ -197,6 +258,7 @@ class StepCard extends React.Component {
              </button>
 
             }
+            </form>
 
           
             </div>
@@ -208,3 +270,4 @@ class StepCard extends React.Component {
 }
 
 export default StepCard;
+
