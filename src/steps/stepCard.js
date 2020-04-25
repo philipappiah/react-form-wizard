@@ -93,7 +93,7 @@ showSubmitBtn = () =>{
           <div className="card-body" key={this.props.identity}>
             <h5>{this.props.title}</h5>
 
-            <form  onSubmit={this.submitData}>
+            <form  onSubmit={this.submitData} key={this.props.identity}>
 
             {Object.keys(this.props.stepsData).map(res =>
               res == this.props.identity ? (
@@ -135,7 +135,7 @@ showSubmitBtn = () =>{
                         </label>
                       </div>
                     ) : data == "select" ? (
-                      <div className="form-group">
+                      <div className="form-group" key={i}>
                         <label htmlFor="c_diff_country" className="text-black">
                           {name.label ? name.label : ""}
                           
@@ -160,7 +160,7 @@ showSubmitBtn = () =>{
                         </select>
                       </div>
                     ) : data == "textarea" ?  (
-                      <div className="form-group">
+                      <div className="form-group" key={i}>
                       <label htmlFor={`${name.id}`} className="text-black">
                         {name.label ? name.label : ""}
                       </label>
@@ -168,7 +168,7 @@ showSubmitBtn = () =>{
                         name={`${name.id ? name.id :""}`}
                         id={`${name.id ? name.id:""}`}
                         required={`${name.required ? 'required':''}`}
-                        readOnly={`${name.readOnly ? true:""}`}
+                        readOnly={`${name.readOnly ? "readOnly":""}`}
                         cols={name.cols ? name.cols: 10}
                         rows={name.rows ? name.rows : 5}
                         className="form-control"
@@ -180,7 +180,7 @@ showSubmitBtn = () =>{
                     </div>
                     ) : data == "checkbox" ?
                     ( 
-                      <div className="form-group">
+                      <div className="form-group" key={i}>
                     <label
                       htmlFor={`${name.id ? name.id:""}`}
                       className="text-black"
@@ -196,7 +196,7 @@ showSubmitBtn = () =>{
                       />{" "}
                       {name.label}
                     </label>  </div>): (
-                      <div className="col form-group">
+                      <div className="col form-group" key={i}>
                         <label>{name.label ? name.label : ""}</label>
                         <input
                           type={`${data}`}
@@ -216,7 +216,7 @@ showSubmitBtn = () =>{
                   )
                 )
               ) : (
-                <div />
+                <div key={res} />
               )
             )}
 
