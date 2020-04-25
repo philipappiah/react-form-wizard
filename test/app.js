@@ -21,7 +21,7 @@ class App extends React.Component {
           text: {
             total: 2,
 
-            names: [
+            details: [
               { id: "fullname", label: "Fullname", required: true },
               { id: "lastname", label: "Lastname" },
             ],
@@ -33,12 +33,12 @@ class App extends React.Component {
         input: {
           text: {
             total: 2,
-            names: [
+            details: [
               { id: "country", label: "Country" },
               { id: "region", label: "Region" },
             ],
           },
-          email: {
+          details: {
             total: 1,
             names: [{ id: "contact", label: "Contact" }],
           },
