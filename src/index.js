@@ -168,7 +168,7 @@ class FormWizard extends React.Component {
             <div>
             
         
-        <div className="center-card">
+        <div>
           {Object.keys(this.props.steps).map((res, i) => (
             <span key={i} className="nextStep ">
               <p
