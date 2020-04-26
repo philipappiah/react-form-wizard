@@ -7,37 +7,7 @@ Bootstrap with custom variables
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- :root {
-  --blue: #12225b;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #fa3434;
-  --orange: #ff6a00;
-  --yellow: #ffc107;
-  --green: #00b517;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #F2F3F7;
-  --gray-dark: #343a40;
-  --primary: #ff6a00;
-  --secondary: #12225b;
-  --success: #00b517;
-  --info: #17a2b8;
-  --warning: #ff6a00;
-  --danger: #fa3434;
-  --light: #fff0e5;
-  --dark: #212529;
-  --primary-light: #ff8833;
-  --gray: #F2F3F7;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1100px;
-  --font-family-sans-serif: "Inter", Arial, "Helvetica Neue", "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
 
 *,
 *::before,
@@ -89,7 +59,8 @@ samp {
 
 
 label {
-  display: inline-block;
+ 
+  float: left;
   margin-bottom: 0.5rem; }
 
 
@@ -256,48 +227,6 @@ textarea.form-control {
   display: block;
   margin-top: 0.25rem; }
 
-.form-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-right: -5px;
-  margin-left: -5px; }
-  .form-row > .col,
-  .form-row > [class*="col-"] {
-    padding-right: 5px;
-    padding-left: 5px; }
-
-.form-check {
-  position: relative;
-  display: block;
-  padding-left: 1.25rem; }
-
-.form-check-input {
-  position: absolute;
-  margin-top: 0.3rem;
-  margin-left: -1.25rem; }
-  .form-check-input:disabled ~ .form-check-label {
-    color: #969696; }
-
-.form-check-label {
-  margin-bottom: 0; }
-
-.form-check-inline {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 0;
-  margin-right: 0.75rem; }
-  .form-check-inline .form-check-input {
-    position: static;
-    margin-top: 0;
-    margin-right: 0.3125rem;
-    margin-left: 0; }
 
 .valid-feedback {
   display: none;
@@ -565,7 +494,8 @@ textarea.form-control {
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
-.btn {
+.actionbuttons {
+  cursor: pointer;
   display: inline-block;
   font-weight: 600;
   color: #212529;
@@ -745,26 +675,10 @@ fieldset:disabled a.btn {
 
 
 
-.btn-lg, .btn-group-lg > .btn {
-  padding: 0.6rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: 0.55rem; }
 
-.btn-sm, .btn-group-sm > .btn {
-  padding: 0.35rem 0.5rem;
-  font-size: 0.82rem;
-  line-height: 1.2;
-  border-radius: 0.37rem; }
-
-.btn-block {
-  display: block;
-  width: 100%; }
- 
 
 input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
+input[type="reset"].btn-block {
   width: 100%; }
 
 .fade {
@@ -1346,15 +1260,7 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid #ebecf0; }
-  .card > hr {
-    margin-right: 0;
-    margin-left: 0; }
-  .card > .list-group:first-child .list-group-item:first-child {
-    border-top-left-radius: 0.37rem;
-    border-top-right-radius: 0.37rem; }
-  .card > .list-group:last-child .list-group-item:last-child {
-    border-bottom-right-radius: 0.37rem;
-    border-bottom-left-radius: 0.37rem; }
+  
 
 .card-body {
   -webkit-box-flex: 1;

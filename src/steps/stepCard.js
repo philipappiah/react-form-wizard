@@ -227,7 +227,7 @@ showSubmitBtn = () =>{
               type="button"
               onClick={this.goToPrev}
               style={{background:"blue", color:"white"}}
-              className="btn  btn-block prevbtn"
+              className="actionbuttons  btn-block prevbtn"
             >
               Prev
             </button>
@@ -240,7 +240,7 @@ showSubmitBtn = () =>{
                 type="button"
                 onClick={this.submitForm}
                 style={{background:"blue", color:"white"}}
-                className="btn  btn-block nextbtn"
+                className="actionbuttons  btn-block nextbtn"
               >
                   submit
                 
@@ -251,7 +251,7 @@ showSubmitBtn = () =>{
                type="submit"
               
                style={{background:"blue", color:"white"}}
-               className="btn  btn-block nextbtn"
+               className="actionbuttons  btn-block nextbtn"
              >
                  Next
                
