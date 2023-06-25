@@ -1,31 +1,29 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
-    libraryTarget: 'commonjs2' // THIS IS THE MOST IMPORTANT LINE! :mindblow: I wasted more than 2 days until realize this was the line most important in all this guide.
+    filename: 'index.js'
+  
   },
   module: {
     rules: [
+      // `js` and `jsx` files are parsed using `babel`
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ["es2015", "stage-0", "react"]
-          }
-        }
+        test: /\.(ts|tsx)$/, 
+        exclude: /node_modules/,
+        loader: 'awesome-typescript-loader'
       },
-      // New rules to load css
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       }
-    ]
+    ],
+  },
+  
+  resolve: {
+    extensions: ['.','.tsx', '.ts', '.js','.jsx'],
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {

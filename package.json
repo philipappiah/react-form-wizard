@@ -1,6 +1,6 @@
 {
   "name": "react-form-wizard",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "React form wizard with minimal configuration. It uses bootstrap css",
   "main": "build/index.js",
   "preferGlobal": true,
@@ -35,14 +35,17 @@
     "css-loader": "^3.5.2",
     "react": "^15.5.4",
     "style-loader": "^1.1.4",
+    "ts-loader": "^9.4.3",
     "webpack": "^2.6.1",
     "webpack-combine-loaders": "^2.0.4"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.22.5",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
+    "awesome-typescript-loader": "^3.5.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
